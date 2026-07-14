@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fernando Ramirez Moreno — Senior Software Engineer & Engineering Lead with 12+ years building scalable distributed systems across fintech, payments, and digital banking.">
+    <meta name="keywords" content="Software Engineer, Engineering Lead, Java, Python, Kotlin, AWS, Kafka, Microservices, FinTech, Digital Banking">
+    <meta name="author" content="Fernando Ramirez Moreno">
+    <meta property="og:title" content="Fernando Ramirez Moreno — Senior Software Engineer">
+    <meta property="og:description" content="12+ years building scalable distributed systems across fintech, payments, and digital banking.">
+    <meta property="og:type" content="website">
+    <title>Fernando Ramirez Moreno — Senior Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-bg: #0f172a;
+            --color-surface: #1e293b;
+            --color-surface-hover: #334155;
+            --color-border: #334155;
+            --color-text: #e2e8f0;
+            --color-text-secondary: #94a3b8;
+            --color-text-muted: #64748b;
+            --color-accent: #38bdf8;
+            --color-accent-dim: #0ea5e9;
+            --color-green: #4ade80;
+            --color-purple: #a78bfa;
+            --color-orange: #fb923c;
+            --max-width: 860px;
+            --radius: 12px;
+            --radius-sm: 8px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            font-size: 15px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, var(--color-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: 1.15rem;
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero .tagline {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            max-width: 600px;
+            margin: 0 auto 28px;
+            font-style: italic;
+        }
+
+        .hero .contact-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero .contact-links a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .hero .contact-links a:hover {
+            color: var(--color-accent);
+        }
+
+        /* Section Headers */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--color-border);
+        }
+
+        /* About */
+        .about p {
+            color: var(--color-text-secondary);
+            margin-bottom: 16px;
+            font-size: 1rem;
+        }
+
+        .about strong {
+            color: var(--color-text);
+        }
+
+        .highlight-box {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-top: 24px;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--color-text);
+            font-weight: 500;
+        }
+
+        .highlight-box .label {
+            color: var(--color-accent);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 4px;
+            font-weight: 600;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .skill-category:hover {
+            border-color: var(--color-accent-dim);
+        }
+
+        .skill-category h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-accent);
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .skill-tag {
+            background: var(--color-bg);
+            border: 1px solid var(--color-border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--color-text-secondary);
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            border-color: var(--color-accent);
+            color: var(--color-accent);
+        }
+
+        /* Experience */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 8px;
+            bottom: 8px;
+            width: 2px;
+            background: var(--color-border);
+        }
+
+        .job {
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .job:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .job::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 10px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            border: 2px solid var(--color-bg);
+        }
+
+        .job-header {
+            margin-bottom: 12px;
+        }
+
+        .job-company {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .job-title {
+            font-size: 1rem;
+            color: var(--color-accent);
+            font-weight: 500;
+        }
+
+        .job-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-top: 4px;
+        }
+
+        .job-description {
+            color: var(--color-text-secondary);
+            margin: 12px 0;
+            font-size: 0.95rem;
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-bullets li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .job-bullets li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+        }
+
+        .job-bullets li strong {
+            color: var(--color-text);
+        }
+
+        .job-tech {
+            margin-top: 14px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .job-tech span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: var(--color-accent);
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        /* Education */
+        .education-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .education-card h3 {
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 6px;
+        }
+
+        .education-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Values */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+        }
+
+        .value-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius);
+            padding: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 1rem;
+            color: #fff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .value-card p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 48px 0;
+            text-align: center;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer h2 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .footer p {
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .footer .updated {
+            margin-top: 32px;
+            font-size: 0.8rem;
+            color: var(--color-text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .hero {
+                padding: 60px 0 40px;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 40px 0;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 20px;
+            }
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: rgba(56, 189, 248, 0.3);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container">
+            <h1>Fernando Ramirez Moreno</h1>
+            <p class="subtitle">Senior Software Engineer | Engineering Lead</p>
+            <p class="tagline">Building scalable distributed systems across fintech, payments, and digital banking — 12+ years turning complex business problems into reliable, high-throughput platforms.</p>
+            <div class="contact-links">
+                <a href="mailto:framirez.work@gmail.com">📧 framirez.work@gmail.com</a>
+                <a href="https://linkedin.com/in/fernando-ramirez-moreno" target="_blank" rel="noopener">🔗 LinkedIn</a>
+                <a href="#">📍 Mexico City (Remote)</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section class="section">
+        <div class="container about">
+            <h2 class="section-title">About Me</h2>
+            <p>I'm a Senior Software Engineer and Engineering Lead with over 12 years of hands-on experience designing, building, and scaling enterprise platforms. My career spans fintech, digital banking, payments, e-commerce, and aviation industries — always at the intersection of complex business logic and high-performance distributed systems.</p>
+            <p>I've led cross-functional teams of up to 10 engineers, architected platforms processing <strong>500M+ transactions per month</strong>, and built compliance systems handling <strong>200K+ onboarding applications monthly</strong>. I'm passionate about clean architecture, system design, performance optimization, and growing the engineers around me.</p>
+            <div class="highlight-box">
+                <p class="label">Currently</p>
+                <p>Software Engineer at <strong>Nymbus</strong> (Digital Banking) — working on compliance automation and regulatory technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Languages & Runtimes</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Java (8, 11, 17)</span>
+                        <span class="skill-tag">Python 3</span>
+                        <span class="skill-tag">Kotlin</span>
+                        <span class="skill-tag">TypeScript</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">PL/SQL</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Frameworks & Libraries</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Spring Boot</span>
+                        <span class="skill-tag">Spring Cloud</span>
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">Flask</span>
+                        <span class="skill-tag">StencilJS</span>
+                        <span class="skill-tag">Flutter</span>
+                        <span class="skill-tag">Java EE</span>
+                        <span class="skill-tag">Hibernate</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Cloud & Infrastructure</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">AWS SQS</span>
+                        <span class="skill-tag">AWS Lambda</span>
+                        <span class="skill-tag">EC2 / ECS</span>
+                        <span class="skill-tag">RDS</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">GitHub Actions</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Data & Messaging</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">PostgreSQL</span>
+                        <span class="skill-tag">Oracle DB</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Apache Kafka</span>
+                        <span class="skill-tag">RabbitMQ</span>
+                        <span class="skill-tag">DynamoDB</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Architecture & Patterns</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Microservices</span>
+                        <span class="skill-tag">Event-Driven</span>
+                        <span class="skill-tag">Server-Driven UI</span>
+                        <span class="skill-tag">REST APIs</span>
+                        <span class="skill-tag">DDD</span>
+                        <span class="skill-tag">CQRS</span>
+                        <span class="skill-tag">SOA</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Domain Knowledge</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">KYC / KYB</span>
+                        <span class="skill-tag">OFAC Screening</span>
+                        <span class="skill-tag">Credit Risk</span>
+                        <span class="skill-tag">eSignatures</span>
+                        <span class="skill-tag">Payments</span>
+                        <span class="skill-tag">Fraud Prevention</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="timeline">
+
+                <!-- Nymbus -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Nymbus</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">Onboard Team | Remote | September 2023 – Present</div>
+                    </div>
+                    <p class="job-description">Nymbus provides digital banking technology to financial institutions across the United States. I work on the Onboard team, building compliance automation systems that power account opening for multiple banking clients.</p>
+                    <ul class="job-bullets">
+                        <li>Develop compliance pipelines processing <strong>200K+ customer onboarding applications per month</strong>, implementing KYC, KYB, and OFAC regulatory checks</li>
+                        <li>Integrate third-party vendor APIs including <strong>Socure</strong> (identity verification), <strong>Lightico</strong> (eSignatures), <strong>MicroBilt</strong> (credit data), and <strong>Scienaptic</strong> (AI credit decisioning)</li>
+                        <li>Design Credit Decision Engine integrations and Customer Service Identification (CSI) modules</li>
+                        <li>Build event-driven workflows using <strong>Python, Java, Redis, and Oracle DB</strong> on AWS infrastructure</li>
+                        <li>Optimize processing pipelines with caching strategies, achieving <strong>99.9% uptime</strong> for critical compliance services</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Python</span><span>Java</span><span>Redis</span><span>Oracle DB</span><span>AWS</span><span>REST APIs</span>
+                    </div>
+                </div>
+
+                <!-- Rappi Lead -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Rappi</div>
+                        <div class="job-title">Engineering Lead</div>
+                        <div class="job-meta">Checkout Team | Remote | May 2021 – September 2023</div>
+                    </div>
+                    <p class="job-description">Rappi is Latin America's largest super-app. As Engineering Lead for the Checkout team at RappiPay, I led the design and delivery of the centralized payment experience used across all RappiPay products.</p>
+                    <ul class="job-bullets">
+                        <li>Led a <strong>cross-functional team of 10 engineers</strong> (iOS, Android, Flutter, Backend, QA) to build the Centralized Checkout SDK — the company-wide payment integration standard</li>
+                        <li>Architected a <strong>Server-Driven UI platform</strong> enabling dynamic checkout flows across mobile platforms, cutting feature deployment from weeks to days</li>
+                        <li>Designed payment infrastructure handling <strong>500M+ transactions per month</strong> across multiple Latin American countries</li>
+                        <li>Reduced P99 latency by <strong>40%</strong> through caching strategies, async processing, and horizontal scaling patterns</li>
+                        <li>Drove technical roadmap, conducted architecture reviews, mentored engineers on distributed systems</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Kotlin</span><span>Spring Boot</span><span>AWS</span><span>Kafka</span><span>Redis</span><span>PostgreSQL</span><span>Server-Driven UI</span>
+                    </div>
+                </div>
+
+                <!-- Rappi SWE -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Rappi</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">Checkout Team | Remote | May 2020 – May 2021</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Built backend microservices for the RappiPay Checkout platform supporting multi-country payment processing</li>
+                        <li>Implemented event-driven integrations with Apache Kafka for real-time transaction state management</li>
+                        <li>Designed API contracts for the Server-Driven UI checkout flow serving millions of daily active users</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Kotlin</span><span>Spring Boot</span><span>PostgreSQL</span><span>Kafka</span><span>Redis</span><span>AWS</span>
+                    </div>
+                </div>
+
+                <!-- Unosquare / TinmanKinetics -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Unosquare (Client: TinmanKinetics)</div>
+                        <div class="job-title">Lead Software Engineer</div>
+                        <div class="job-meta">Remote | April 2018 – May 2020</div>
+                    </div>
+                    <p class="job-description">Led development of the Imaige/Photofetcher cross-platform application — a cloud photo management product spanning iOS, Android, Web, and Desktop.</p>
+                    <ul class="job-bullets">
+                        <li>Led multidisciplinary team building cross-platform app using <strong>StencilJS, Python, and native mobile frameworks</strong></li>
+                        <li>Engineered integrations with <strong>Google Photos API</strong> and developed a custom <strong>iCloud API client</strong> (pycloud) with 2FA support</li>
+                        <li>Designed RESTful API architecture and data pipelines for processing large-scale photo libraries</li>
+                        <li>Coordinated sprint planning, code reviews, and release management across time zones</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Python</span><span>StencilJS</span><span>Google Photos API</span><span>iCloud API</span><span>iOS</span><span>Android</span>
+                    </div>
+                </div>
+
+                <!-- Vesta -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Unosquare (Client: Vesta)</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">Remote | April 2017 – April 2018</div>
+                    </div>
+                    <p class="job-description">Vesta is a payment fraud prevention platform. I worked on the Java EE SOA Middle-Tier backend that powers merchant payment processing and fraud detection.</p>
+                    <ul class="job-bullets">
+                        <li>Enhanced the Vesta payment fraud prevention platform, integrating new merchant workflows and business rule engines</li>
+                        <li>Implemented payment processing and fraud detection rules, reducing false positive rates for high-volume merchants</li>
+                        <li>Built internal/external portal features for merchant management and transaction monitoring</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java EE</span><span>SOA</span><span>REST APIs</span><span>Fraud Detection</span>
+                    </div>
+                </div>
+
+                <!-- Aeromexico -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Aeroméxico</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">Check-In Recognition | Hybrid – Mexico City | April 2016 – April 2017</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Designed a <strong>microservices-based Check-In Recognition system</strong> for identifying corporate travelers and delivering personalized benefits</li>
+                        <li>Integrated with <strong>Sabre GDS</strong> (Global Distribution System) to retrieve and update passenger data dynamically</li>
+                        <li>Deployed containerized services using Docker for rapid iteration and independent scaling</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java 8+</span><span>Spring Boot</span><span>Spring Cloud</span><span>Docker</span><span>Kafka</span><span>RabbitMQ</span><span>Sabre GDS</span>
+                    </div>
+                </div>
+
+                <!-- Grupo Salinas Tech Lead -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Grupo Salinas</div>
+                        <div class="job-title">Tech Lead</div>
+                        <div class="job-meta">Technical Debt Team | Mexico City | April 2015 – April 2016</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Led technical debt initiatives for enterprise Java applications, establishing coding standards and <strong>Git Flow</strong> for 15+ engineers</li>
+                        <li>Created Java EE, Java 8+, and PL/SQL guidelines, improving code quality by <strong>30%</strong> and reducing production incidents</li>
+                        <li>Mentored new engineers and designed onboarding/training programs</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java EE</span><span>Java 8+</span><span>PL/SQL</span><span>Git</span><span>Legacy Modernization</span>
+                    </div>
+                </div>
+
+                <!-- Grupo Salinas SWE -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Grupo Salinas</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">HR & Payroll Team | Mexico City | April 2014 – April 2015</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Developed enterprise HR systems (Attendance, PTO, Payroll) for multi-country operations</li>
+                        <li>Built <strong>biometric fingerprint recognition</strong> (UareU SDK) for benefit disbursement serving 5,000+ employees</li>
+                        <li>Implemented <strong>SAP-HR interfaces</strong> via RFC table integration for real-time data synchronization</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java 8+</span><span>Oracle DB</span><span>SAP RFC</span><span>UareU SDK</span>
+                    </div>
+                </div>
+
+                <!-- DC Mayorista -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">DC Mayorista</div>
+                        <div class="job-title">Software Engineer</div>
+                        <div class="job-meta">Logistics Team | Mexico City | February 2013 – April 2014</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Developed Java EE microservices for e-commerce integrations (Amazon, Cyber Puerta, Pedidos.com, Ingram Micro)</li>
+                        <li>Optimized stored procedures in SQL Server and IBM Informix for high-volume inventory operations</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java EE</span><span>SQL Server</span><span>IBM Informix</span><span>E-Commerce APIs</span>
+                    </div>
+                </div>
+
+                <!-- Infenix -->
+                <div class="job">
+                    <div class="job-header">
+                        <div class="job-company">Infenix Webs</div>
+                        <div class="job-title">Software Engineer (Freelance)</div>
+                        <div class="job-meta">Remote | January 2013 – February 2014</div>
+                    </div>
+                    <ul class="job-bullets">
+                        <li>Delivered client projects: ISBN Search Engine, restaurant rating platform, and real-time WebSocket chat for conservation volunteers (Canada)</li>
+                        <li>Built real-time communication features using Java EE WebSockets and efficient data processing with Java 8+ Streams</li>
+                    </ul>
+                    <div class="job-tech">
+                        <span>Java EE</span><span>Java 8+</span><span>WebSockets</span><span>MySQL</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3>Bachelor of Science in Computer Systems Engineering</h3>
+                <p>Escuela Superior de Cómputo (ESCOM) — Instituto Politécnico Nacional (IPN)</p>
+                <p>Mexico City, Mexico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- What Drives Me -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">What Drives Me</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>⚙️ System Design</h3>
+                    <p>I think in systems. Understanding how distributed components interact, fail, and recover is what I find most rewarding.</p>
+                </div>
+                <div class="value-card">
+                    <h3>📈 Scale</h3>
+                    <p>There's a particular satisfaction in watching architecture decisions pay off at 500M+ transactions/month.</p>
+                </div>
+                <div class="value-card">
+                    <h3>👥 Team Growth</h3>
+                    <p>Engineering leadership isn't about having answers — it's about creating environments where teams find them faster.</p>
+                </div>
+                <div class="value-card">
+                    <h3>🧹 Clean Code</h3>
+                    <p>Good architecture decisions compound. Technical debt is real, and I've spent an entire role dedicated to paying it down.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I'm always open to conversations about distributed systems, fintech engineering, or engineering leadership.</p>
+            <div class="footer-links">
+                <a href="mailto:framirez.work@gmail.com">📧 framirez.work@gmail.com</a>
+                <a href="https://linkedin.com/in/fernando-ramirez-moreno" target="_blank" rel="noopener">🔗 LinkedIn</a>
+            </div>
+            <p class="updated">Last updated: July 2026</p>
+        </div>
+    </footer>
+
+</body>
+</html>
